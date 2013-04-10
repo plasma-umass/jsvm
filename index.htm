@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>JSVM - The JavaScript JVM</title>
+		<script language="JavaScript" src="src/Long.js"></script>
+		<script language="JavaScript" src="src/Int.js"></script>
+		
+		<script language="JavaScript" src="src/Package.js"></script>
+		<script language="JavaScript" src="src/Class.js"></script>
+		<script language="JavaScript" src="src/Method.js"></script>
+		<script language="JavaScript" src="src/Instance.js"></script>
+		<script language="JavaScript" src="src/Frame.js"></script>
+		<script language="JavaScript" src="src/Type.js"></script>
+		<script language="JavaScript" src="src/Value.js"></script>
+		<script language="JavaScript" src="src/Executor.js"></script>
+		<script language="JavaScript" src="src/Instructions.js"></script>
+		
+		<script language="JavaScript" src="src/descriptor.js"></script>
+		<script language="JavaScript" src="src/loader.js"></script>
+		<script language="JavaScript" src="src/ui.js"></script>
+		
+		<script language="JavaScript" src="src/hooks.js"></script>
+		
+		<script language="JavaScript" src="src/native/Misc.js"></script>
+		<script language="JavaScript" src="src/native/java/lang/Class.js"></script>
+		<script language="JavaScript" src="src/native/java/lang/Float.js"></script>
+		<script language="JavaScript" src="src/native/java/lang/Object.js"></script>
+		<script language="JavaScript" src="src/native/java/lang/System.js"></script>
+		
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: 80%;
+			}
+
+			table {
+				border-collapse: collapse;
+				font-size: 80%;
+			}
+
+			th, td {
+				padding: 4px;
+				border: 1px solid gray;
+			}
+
+			th {
+				background-color: rgb(200, 200, 200);
+			}
+
+			label, button {
+				display: block;
+				clear: left;
+				margin-top: 10px;
+			}
+
+			#loader {
+				float: left;
+			}
+
+			#console {
+				float: left;
+				border: 1px solid gray;
+				margin: 10px;
+				width: 51em;
+				height: 24em;
+				height: 96%;
+				overflow-y: scroll;
+				word-wrap: break-word;
+
+				background-color: black;
+				font-family: Courier New;
+				color: white;
+			}
+
+			#console_body {
+				margin: 0;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="console"><pre id="console_body">Welcome to JSVM - The JavaScript Java Virtual Machine
+&#888;</pre></div>
+		<div id="loader">
+			<form name="class_loader" action=""	method="GET">
+				<label for="selected_file">Class File(s)</label>
+				<input type="file" name="selected_files" multiple />
+
+				<input type="button" value="Load File(s)" onClick="load_file(this.form)" />
+			</form>
+
+			<table id="classpath">
+				<tr><th>Loaded Classes</th></tr>
+				<tr><td>No classes loaded</td></tr>
+			</table>
+		</div>
+	</body>
+</html>
